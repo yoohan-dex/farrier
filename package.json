@@ -1,0 +1,72 @@
+{
+  "name": "farrier",
+  "version": "1.0.0",
+  "description": "farrier-mock-testing-app",
+  "author": "yoohoo",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier --write \"**/*.ts\"",
+    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "start:dev": "nodemon",
+    "prestart:prod": "rm -rf dist && tsc",
+    "start:prod": "node dist/main.js",
+    "start:hmr": "node dist/server",
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "webpack": "webpack --config webpack.config.js",
+    "typeorm": "ts-node ./node_modules/.bin/typeorm",
+    "typeorm:sync": "ts-node ./node_modules/.bin/typeorm schema:sync"
+
+  },
+  "dependencies": {
+    "@nestjs/common": "^5.0.0",
+    "@nestjs/core": "^5.0.0",
+    "@nestjs/microservices": "^5.0.0",
+    "@nestjs/testing": "^5.0.0",
+    "@nestjs/typeorm": "^5.0.2",
+    "@nestjs/websockets": "^5.0.0",
+    "class-transformer": "^0.1.9",
+    "class-validator": "^0.8.5",
+    "fastify-formbody": "^2.0.0",
+    "mysql": "^2.15.0",
+    "ramda": "^0.25.0",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^6.0.0",
+    "signale": "^1.2.1",
+    "typeorm": "^0.2.7",
+    "typescript": "^2.6.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.0.39",
+    "@types/jest": "^23.1.2",
+    "@types/node": "^9.3.0",
+    "@types/ramda": "^0.25.34",
+    "@types/supertest": "^2.0.4",
+    "jest": "^23.2.0",
+    "nodemon": "^1.14.1",
+    "prettier": "^1.11.1",
+    "supertest": "^3.0.0",
+    "ts-jest": "^22.4.6",
+    "ts-loader": "^4.1.0",
+    "ts-node": "^4.1.0",
+    "tsconfig-paths": "^3.1.1",
+    "tslint": "5.3.2",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.13",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage"
+  }
+}

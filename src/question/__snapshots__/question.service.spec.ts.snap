@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuestionService should can get questions by type and by pager 1`] = `
+Array [
+  Object {
+    "analysis": null,
+    "answers": Array [
+      Object {
+        "content": "answer1",
+        "id": Any<Number>,
+      },
+      Object {
+        "content": "answer2",
+        "id": Any<Number>,
+      },
+      Object {
+        "content": "answer3",
+        "id": Any<Number>,
+      },
+      Object {
+        "content": "answer4",
+        "id": Any<Number>,
+      },
+    ],
+    "content": null,
+    "id": Any<Number>,
+    "questions": Array [
+      Object {
+        "analysis": "then i am analysis",
+        "answers": Array [],
+        "content": "this is a question and 中文",
+        "id": Any<Number>,
+        "rightAnswer": Array [
+          Any<Number>,
+        ],
+        "type": 0,
+      },
+      Object {
+        "analysis": "then i am analysis",
+        "answers": Array [],
+        "content": "this is a question and 中文",
+        "id": Any<Number>,
+        "rightAnswer": Array [
+          Any<Number>,
+        ],
+        "type": 0,
+      },
+    ],
+    "rightAnswer": null,
+    "type": 3,
+  },
+]
+`;
+
+exports[`QuestionService should can save a new common question 1`] = `
+Question {
+  "analysis": "then i am analysis",
+  "answers": Array [
+    Object {
+      "content": "answer1",
+      "id": Any<Number>,
+    },
+    Object {
+      "content": "answer2",
+      "id": Any<Number>,
+    },
+    Object {
+      "content": "answer3",
+      "id": Any<Number>,
+    },
+    Object {
+      "content": "answer4",
+      "id": Any<Number>,
+    },
+  ],
+  "content": "this is a question and 中文",
+  "id": Any<Number>,
+  "parent": null,
+  "rightAnswer": Array [
+    Any<Number>,
+  ],
+  "type": 1,
+}
+`;
+
+exports[`QuestionService should can save a new second question 1`] = `
+Question {
+  "analysis": null,
+  "content": "whatever you write",
+  "id": Any<Number>,
+  "questions": Array [
+    Object {
+      "analysis": "then i am analysis",
+      "answers": Array [
+        Object {
+          "content": "answer1",
+          "id": Any<Number>,
+        },
+        Object {
+          "content": "answer2",
+          "id": Any<Number>,
+        },
+        Object {
+          "content": "answer3",
+          "id": Any<Number>,
+        },
+        Object {
+          "content": "answer4",
+          "id": Any<Number>,
+        },
+      ],
+      "content": "this is a question and 中文",
+      "id": Any<Number>,
+      "rightAnswer": Array [
+        Any<Number>,
+      ],
+      "type": 0,
+    },
+    Object {
+      "analysis": "then i am analysis",
+      "answers": Array [
+        Object {
+          "content": "answer1",
+          "id": Any<Number>,
+        },
+        Object {
+          "content": "answer2",
+          "id": Any<Number>,
+        },
+        Object {
+          "content": "answer3",
+          "id": Any<Number>,
+        },
+        Object {
+          "content": "answer4",
+          "id": Any<Number>,
+        },
+      ],
+      "content": "this is a question and 中文",
+      "id": Any<Number>,
+      "rightAnswer": Array [
+        Any<Number>,
+      ],
+      "type": 0,
+    },
+  ],
+  "rightAnswer": null,
+  "type": 2,
+}
+`;
+
+exports[`QuestionService should can save a new third question 1`] = `
+Question {
+  "analysis": null,
+  "answers": Array [
+    Object {
+      "content": "answer1",
+      "id": Any<Number>,
+    },
+    Object {
+      "content": "answer2",
+      "id": Any<Number>,
+    },
+    Object {
+      "content": "answer3",
+      "id": Any<Number>,
+    },
+    Object {
+      "content": "answer4",
+      "id": Any<Number>,
+    },
+  ],
+  "content": null,
+  "id": Any<Number>,
+  "questions": Array [
+    Object {
+      "analysis": "then i am analysis",
+      "content": "this is a question and 中文",
+      "id": Any<Number>,
+      "rightAnswer": Array [
+        Any<Number>,
+      ],
+      "type": 0,
+    },
+    Object {
+      "analysis": "then i am analysis",
+      "content": "this is a question and 中文",
+      "id": Any<Number>,
+      "rightAnswer": Array [
+        Any<Number>,
+      ],
+      "type": 0,
+    },
+  ],
+  "rightAnswer": null,
+  "type": 3,
+}
+`;
+
+exports[`QuestionService will estimate a common question 1`] = `
+Object {
+  "pass": false,
+  "question": Object {
+    "analysis": "then i am analysis",
+    "answers": Array [
+      Object {
+        "content": "answer1",
+        "id": Any<Number>,
+      },
+      Object {
+        "content": "answer2",
+        "id": Any<Number>,
+      },
+      Object {
+        "content": "answer3",
+        "id": Any<Number>,
+      },
+      Object {
+        "content": "answer4",
+        "id": Any<Number>,
+      },
+    ],
+    "content": "this is a question and 中文",
+    "id": Any<Number>,
+    "rightAnswer": Array [
+      Any<Number>,
+    ],
+    "type": 1,
+  },
+  "selectedAnswer": Array [
+    Object {
+      "questionId": Any<Number>,
+      "selectedAnswers": Array [
+        8,
+      ],
+    },
+  ],
+}
+`;
