@@ -5,7 +5,6 @@ import {
   ManyToMany,
   JoinTable,
 } from 'typeorm';
-import { Question } from './Question';
 import { FailAnswer } from './FailAnswer';
 
 @Entity()
@@ -14,13 +13,11 @@ export class Performance {
 
   @Column('uuid') user: string;
 
-  @ManyToMany(type => Question, { eager: true })
-  @JoinTable()
-  pass: Question[];
+  @Column('simple-array')
+  pass: number[];
 
-  @ManyToMany(type => Question, { eager: true })
-  @JoinTable()
-  fail: Question[];
+  @Column('simple-array')
+  fail: number[];
 
   @ManyToMany(type => FailAnswer, { eager: true })
   @JoinTable()

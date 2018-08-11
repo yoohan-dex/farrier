@@ -44,18 +44,17 @@ export class PerformanceService {
       return [];
     }
     const { fail, pass } = performance;
-    return [...fail, ...pass].map(q => q.id);
+    return [...fail, ...pass];
   }
 
   async savePass(user: string, question: Question) {
     const performance = await this.performanceRepository.findOne({ user });
-    performance.pass.push(question);
+    performance.pass.push(question.id);
 
     // check if the user have fail this question
-    const failQuestionIdx = performance.fail.findIndex(
-      f => f.id === question.id,
-    );
-    if (failQuestionIdx !== undefined) {
+    const failQuestionIdx = performance.fail.indexOf(question.id);
+
+    if (failQuestionIdx !== -1) {
       performance.fail.splice(failQuestionIdx, 1);
     }
 
@@ -79,7 +78,7 @@ export class PerformanceService {
     const failAnswers = await this.failAnswerRepository.save(
       willSaveFailAnswers,
     );
-    performance.fail.push(question);
+    performance.fail.push(question.id);
     performance.failAnswers.push(...failAnswers);
     await this.performanceRepository.save(performance);
   }
