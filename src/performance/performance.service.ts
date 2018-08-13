@@ -66,7 +66,10 @@ export class PerformanceService {
     question: Question,
     selectAnswers: SelectAnswer[],
   ) {
+    console.time('get performance');
     const performance = await this.findPerformanceByUser(user);
+    console.timeEnd('get performance');
+    console.time('save in fail');
 
     const willSaveFailAnswers = selectAnswers.map(selectAnswer => {
       const failAnswer = new FailAnswer();
@@ -78,9 +81,13 @@ export class PerformanceService {
     const failAnswers = await this.failAnswerRepository.save(
       willSaveFailAnswers,
     );
+    console.timeEnd('save in fail');
+    console.time('save in performance');
+
     performance.fail.push(question.id);
     performance.failAnswers.push(...failAnswers);
     await this.performanceRepository.save(performance);
+    console.timeEnd('save in performance');
   }
 
   private async findPerformanceByUser(user: string) {
