@@ -37,7 +37,10 @@ export class PerformanceController {
     @User() user: WxUserDto,
   ) {
     if (dto.type === 1) {
+      console.time('get result');
       const result = await this.questionService.estimateCommonQuestion(dto);
+      console.timeEnd('get result');
+
       if (result.pass) {
         await this.performanceService.savePass(user.uuid, result.question);
       } else {
