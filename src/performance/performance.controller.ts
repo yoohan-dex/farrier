@@ -41,6 +41,8 @@ export class PerformanceController {
       const result = await this.questionService.estimateCommonQuestion(dto);
       console.timeEnd('get result');
 
+      console.time('save in performance');
+
       if (result.pass) {
         await this.performanceService.savePass(user.uuid, result.question);
       } else {
@@ -50,6 +52,8 @@ export class PerformanceController {
           result.selectedAnswer,
         );
       }
+      console.timeEnd('save in performance');
+
       return result;
     } else if (dto.type === 2 || dto.type === 3) {
       const result = await this.questionService.estimateSecondQuestion(dto);
